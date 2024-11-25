@@ -8,17 +8,16 @@ mongoose
     .connect(process.env.MONGODB_CONNECTION_STRING as string)
     .then(() => console.log("Connected to database!"));
 
-const app = express();
+const app = express();  
 app.use(cors());
 app.use(express.json());
 
-app.get("/health", async (req: Request, res: Response) => {
+app.get("/hi", async (req: Request, res: Response) => {
     res.send({ message: "health OK!" });
-});
+}); 
 
 app.use("/api/my/user", myUserRoute);
-
-
-app.listen(7000, () => {
-    console.log("server started on localhost:7000");
-});
+ 
+app.listen(1000, () => {
+    console.log("server started on localhost:1000");
+}); 
