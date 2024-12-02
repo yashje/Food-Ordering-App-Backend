@@ -24,3 +24,15 @@ export const validateMyUserRequest = [
     handleValidationErrors,
 ];
 
+export const validateMyRestaurantRequest = [
+    body("restaurantName").notEmpty().withMessage("Restaurant name is Required"),
+    body("city").notEmpty().withMessage("city name is Required"),
+    body("country").notEmpty().withMessage("country name is Required"),
+    body("deliveryPrice").isFloat({ min: 0 }).withMessage("Dlivery Price is Required"),
+    body("estimatedDeliveryTime").isInt({ min: 0 }).withMessage("Estimated Delivery Time is Required"),
+    body("cuisines").isArray().withMessage("Cuisines is Required").not().isEmpty().withMessage("Cuisines is Required"),
+    body("menuItems").isArray().withMessage("Menu Items is Required"),
+    body("menuItems.*.name").notEmpty().withMessage("Name is Required"),
+    body("menuItems.*.price").isFloat({ min: 0 }).withMessage("Price is Required"),
+    handleValidationErrors,
+]
