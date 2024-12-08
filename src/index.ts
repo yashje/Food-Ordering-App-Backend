@@ -4,29 +4,31 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import myUserRoute from "./routes/MyUserRoute";
 import { v2 as cloudinary } from "cloudinary";
-import MyRestaurantRoute from "./routes/MyRestaurantRoute"
+import MyRestaurantRoute from "./routes/MyRestaurantRoute";
+import RestaurantRoute from "./routes/RestaurantRoute";
 
 mongoose
-    .connect(process.env.MONGODB_CONNECTION_STRING as string)
-    .then(() => console.log("Connected to database!"));
+  .connect(process.env.MONGODB_CONNECTION_STRING as string)
+  .then(() => console.log("Connected to database!"));
 
 cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET,
-})
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.get("/hi", async (req: Request, res: Response) => {
-    res.send({ message: "health OK!" });
+  res.send({ message: "health OK!" });
 });
 
 app.use("/api/my/user", myUserRoute);
-app.use("/api/my/restaurant", MyRestaurantRoute)
+app.use("/api/my/restaurant", MyRestaurantRoute);
+app.use("/api/restaurant", RestaurantRoute);
 
 app.listen(1000, () => {
-    console.log("server started on localhost:1000");
-}); 
+  console.log("server started on localhost:1000");
+});
