@@ -3,7 +3,7 @@
 This project is a backend application built with Node.js, TypeScript, and Express, designed to handle a food ordering app. It also integrates with third-party services like Stripe for payment processing and Cloudinary for media storage.
 
 ## Deployed Version
-The project is deployed and can be accessed``` [(https://food-ordering-app-backend-1ju4.onrender.com)].```
+The project is deployed and can be accessed```bash https://food-ordering-app-backend-1ju4.onrender.com.```
 
 ---
 
@@ -109,7 +109,3 @@ Before starting, ensure you have the following installed:
   ```bash
   npm install -g typescript
   ```
-
----
-
-Enjoy building and scaling your food ordering app backend!
