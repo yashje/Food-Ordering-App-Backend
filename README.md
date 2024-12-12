@@ -22,7 +22,6 @@ Before starting, ensure you have the following installed:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yashje/Food-Ordering-App-Backend
-   cd backend
    ```
 
 2. **Install dependencies**:
