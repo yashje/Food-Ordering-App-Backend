@@ -1,4 +1,4 @@
-# Backend Project
+# Food-Ordering-App-Backend
 
 This project is a backend application built with Node.js, TypeScript, and Express, designed to handle a food ordering app. It also integrates with third-party services like Stripe for payment processing and Cloudinary for media storage.
 
@@ -21,7 +21,7 @@ Before starting, ensure you have the following installed:
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/yashje/Food-Ordering-App-Backend>
    cd backend
    ```
 
